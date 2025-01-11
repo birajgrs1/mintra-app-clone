@@ -334,3 +334,31 @@ hr {
   font-size: 14px;
   background: #fafbfc;
 }
+
+
+/* Bag count  */
+
+.bag-item-count {
+  background-color: #f16565;
+  white-space: nowrap;
+  text-align: center;
+  line-height: 18px;
+  padding: 0 6px;
+  height: 18px;
+  position: absolute;
+  border-radius: 50%;
+  font-size: 12px;
+  color: #fff;
+  left: 13px;
+  top: -44px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.action-container {
+  text-decoration: none;
+}
+
+a.action-container:link {
+  color: black;
+}
