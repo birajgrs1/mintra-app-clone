@@ -1,9 +1,6 @@
 import React from "react";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import HomeItem from "./components/HomeItem";
-
-function App() {
+import HomeItem from '../components/HomeItem'
+const Home = () => {
   const items = [
     {
       id: "001",
@@ -23,20 +20,14 @@ function App() {
   ];
 
   return (
-    <>
-      <Header />
-
-      <main>
-        <div className="items-container">
-          {items.map((item) => (
-            <HomeItem key={item.id} item={item} />
-          ))}
-        </div>
-      </main>
-
-      <Footer />
-    </>
+    <main>
+      <div className="items-container">
+        {items.map((item) => (
+          <HomeItem key={item.id} item={item} />
+        ))}
+      </div>
+    </main>
   );
-}
+};
 
-export default App;
+export default Home;
