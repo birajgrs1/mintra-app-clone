@@ -3,11 +3,16 @@ import { BsPerson } from "react-icons/bs";
 import { CiHeart } from "react-icons/ci";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { IoIosSearch } from "react-icons/io";
 
 const Header = () => {
+
+  const bag = useSelector(store => store.bag);
+  // console.log("bag contains: ", bag);
+
   return (
     <header>
-      {/* Logo */}
       <div className="logo_container">
         <Link to="/">
           <img
@@ -18,7 +23,6 @@ const Header = () => {
         </Link>
       </div>
 
-      {/* Navigation */}
       <nav className="nav_bar">
         <Link to="/">Men</Link>
         <Link to="/">Women</Link>
@@ -28,19 +32,17 @@ const Header = () => {
         <Link to="/">
           Studio <sup>0</sup>
         </Link>
-        <Link to="/bag">Bag</Link>
+      
       </nav>
 
-      {/* Search Bar */}
       <div className="search_bar">
-        <span className="material-icons search_icon">search</span>
+        <span className="material-icons search_icon"><IoIosSearch/></span>
         <input
           className="search_input"
           placeholder="Search for products, brands and more"
         />
       </div>
 
-      {/* Action Bar */}
       <div className="action_bar">
         <div className="action_container">
           <BsPerson />
@@ -53,7 +55,7 @@ const Header = () => {
         <Link className="action_container" to="/bag">
           <HiOutlineShoppingBag />
           <span className="action_name">Bag</span>
-          <span className="bag-item-count">{0}</span>
+          <span className="bag-item-count">{bag.length}</span>
         </Link>
       </div>
     </header>

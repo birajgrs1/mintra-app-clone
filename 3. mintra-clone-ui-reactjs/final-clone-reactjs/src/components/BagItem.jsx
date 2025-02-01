@@ -1,6 +1,15 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { RxCross1 } from "react-icons/rx";
+import { bagActions } from "../store/bagSlice";
+
 
 const BagItem = ({ item }) => {
+   
+  const dispatch = useDispatch();
+  const handleRemoveItem = () =>{
+    dispatch(bagActions.remove(item.id));
+  }
   return (
     <div className="bag-item-container">
       <div className="item-left-part">
@@ -28,9 +37,9 @@ const BagItem = ({ item }) => {
 
       <div
         className="remove-from-cart"
-        onClick={() => console.log("Clicked on remove item.")}
+        onClick={handleRemoveItem}
       >
-        X
+        <RxCross1/>
       </div>
     </div>
   );
